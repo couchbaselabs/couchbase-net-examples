@@ -11,7 +11,7 @@ namespace Couchbase.SslExample
 {
     class Program
     {
-        private static CouchbaseCluster _cluster;
+        private static Cluster _cluster;
         static void Main(string[] args)
         {
             var config = new ClientConfiguration
@@ -25,7 +25,7 @@ namespace Couchbase.SslExample
             const int numOperations = 100;
             var opCount = 0;
 
-            using (_cluster = new CouchbaseCluster(config))
+            using (_cluster = new Cluster(config))
             {
                 using (var bucket = _cluster.OpenBucket())
                 {

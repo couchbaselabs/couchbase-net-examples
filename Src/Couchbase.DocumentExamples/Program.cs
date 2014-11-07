@@ -17,9 +17,10 @@ namespace Couchbase.DocumentExamples
 
         public int Age { get; set; }
     }
+
     class Program
     {
-        static CouchbaseCluster _cluster = new CouchbaseCluster();
+        static Cluster _cluster = new Cluster();
        
         static void Main(string[] args)
         {

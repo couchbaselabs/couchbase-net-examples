@@ -9,7 +9,7 @@ namespace Couchbase.N1QLExamples
 {
     class Program
     {
-        static CouchbaseCluster _cluster = new CouchbaseCluster();
+        static Cluster _cluster = new Cluster();
 
         static void Main(string[] args)
         {

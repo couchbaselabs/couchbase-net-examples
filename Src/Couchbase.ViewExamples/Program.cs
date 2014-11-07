@@ -9,7 +9,7 @@ namespace Couchbase.ViewExamples
 {
     class Program
     {
-        static CouchbaseCluster _cluster = new CouchbaseCluster();
+        static Cluster _cluster = new Cluster();
 
         static void Main(string[] args)
         {
@@ -23,9 +23,7 @@ namespace Couchbase.ViewExamples
 
         static void BasicQuery(IBucket bucket)
         {
-            var query = bucket.CreateQuery(false).
-                DesignDoc("beer").
-                View("brewery_beers").
+            var query = bucket.CreateQuery("beer", "brewery_beers").
                 Limit(5);
 
             var result = bucket.Query<dynamic>(query);

@@ -21,8 +21,24 @@ namespace Couchbase.ClientConfigurationExample
                     new Uri("http://192.168.56.103:8091/pools"),
                     new Uri("http://192.168.56.104:8091/pools"),
                 },
+                UseSsl = false,
+                BucketConfigs = new Dictionary<string, BucketConfiguration>
+                {
+                    {"default", new BucketConfiguration
+                    {
+                        BucketName = "default",
+                        UseSsl = true,
+                        Password = "",
+                        PoolConfiguration = new PoolConfiguration
+                        {
+                            MaxSize = 10,
+                            MinSize = 5
+                        }
+                    }}
+                }
             };
-            using (var cluster = new CouchbaseCluster(config))
+
+            using (var cluster = new Cluster(config))
             {
                 IBucket bucket = null;
                 try

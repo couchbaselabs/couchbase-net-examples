@@ -4,7 +4,7 @@ namespace Couchbase.HelloCouchbase
 {
     class Program
     {
-        public static CouchbaseCluster Cluster = new CouchbaseCluster();
+        public static Cluster Cluster = new Cluster();
 
         static void Main(string[] args)
         {
@@ -19,11 +19,15 @@ namespace Couchbase.HelloCouchbase
                     }
                 };
 
-                var result = bucket.Upsert(document);
-                var msg = string.Format("Inserted document '{0}': {1}", 
-                    document.Id, result.Success);
-
-                Console.WriteLine(msg);
+                var upsert = bucket.Upsert(document);
+                if (upsert.Success)
+                {
+                    var get = bucket.GetDocument<dynamic>(document.Id);
+                    document = get.Document;
+                    var msg = string.Format("{0} {1}!", document.Id, document.Value.Name);
+                    Console.WriteLine(msg);
+                }
+                Console.Read();
             }
         }
     }

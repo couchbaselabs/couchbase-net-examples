@@ -10,7 +10,7 @@ namespace Couchbase.ClientConfigurationExample.WebConfig
     {
         static void Main(string[] args)
         {
-            using (var cluster = new CouchbaseCluster("couchbaseClients/couchbase"))
+            using (var cluster = new Cluster("couchbaseClients/couchbase"))
             {
                 using (var bucket = cluster.OpenBucket())
                 {
