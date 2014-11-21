@@ -12,6 +12,7 @@ namespace Couchbase.ClientConfigurationExample
     {
         static void Main(string[] args)
         {
+            //Note: change the IP's below to your own cluster's IP's to run
             var config = new ClientConfiguration
             {
                 Servers = new List<Uri>
