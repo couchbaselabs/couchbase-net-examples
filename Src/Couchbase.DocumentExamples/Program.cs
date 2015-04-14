@@ -40,7 +40,7 @@ namespace Couchbase.DocumentExamples
             var document = new Document<Person>
             {
                 Id = "P1",
-                Value = new Person
+                Content = new Person
                 {
                     FirstName = "John",
                     LastName = "Adams",
@@ -61,14 +61,14 @@ namespace Couchbase.DocumentExamples
             var result = bucket.GetDocument<Person>("P1");
             if (result.Success)
             {
-                var person = result.Value;
+                var person = result.Content;
                 Console.WriteLine("Retrieved document '{0}': {1} {2}", id, person.FirstName, person.LastName);
             }
         }
 
         private static void ReplaceDocument(IBucket bucket, Document<Person> document)
         {
-            var person = document.Value;
+            var person = document.Content;
             person.FirstName = "Tom";
             person.LastName = "Finnigan";
 
@@ -77,7 +77,7 @@ namespace Couchbase.DocumentExamples
                 var result = bucket.GetDocument<Person>("P1");
                 if (result.Success)
                 {
-                    person = result.Value;
+                    person = result.Content;
                     Console.WriteLine("Replaced document '{0}': {1} {2}", 
                         document.Id, person.FirstName, person.LastName);
                 }

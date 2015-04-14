@@ -13,7 +13,7 @@ namespace Couchbase.HelloCouchbase
                 var document = new Document<dynamic>
                 {
                     Id = "Hello",
-                    Value = new
+                    Content = new
                     {
                         Name = "Couchbase"
                     }
@@ -24,7 +24,7 @@ namespace Couchbase.HelloCouchbase
                 {
                     var get = bucket.GetDocument<dynamic>(document.Id);
                     document = get.Document;
-                    var msg = string.Format("{0} {1}!", document.Id, document.Value.Name);
+                    var msg = string.Format("{0} {1}!", document.Id, document.Content.Name);
                     Console.WriteLine(msg);
                 }
                 Console.Read();
