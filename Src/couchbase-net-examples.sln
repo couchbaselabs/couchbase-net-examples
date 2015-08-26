@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.ViewExamples", "Couchbase.ViewExamples\Couchbase.ViewExamples.csproj", "{DDCF0CB7-8290-427D-A18B-1FFCEAB3B5D9}"
 EndProject
@@ -22,6 +22,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.ClientConfigurationExample.WebConfig", "Couchbase.ClientConfigurationExample.WebConfig\Couchbase.ClientConfigurationExample.WebConfig.csproj", "{E18F717C-9B79-4C19-A922-79C265ED0AC2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.ClientConfigurationExample", "Couchbase.ClientConfigurationExample\Couchbase.ClientConfigurationExample.csproj", "{D5AA340A-0BF2-4800-A212-9A5C0BE9E6EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{214B32D6-7CF1-4017-8FA1-B7648939DC65}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
