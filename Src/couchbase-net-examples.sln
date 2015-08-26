@@ -30,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{214B32
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.Linq2CouchbaseExample", "Couchbase.Linq2CouchbaseExample\Couchbase.Linq2CouchbaseExample.csproj", "{5EC642A5-C019-4CC6-B8FB-03CA050F7189}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +78,10 @@ Global
 		{D5AA340A-0BF2-4800-A212-9A5C0BE9E6EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5AA340A-0BF2-4800-A212-9A5C0BE9E6EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5AA340A-0BF2-4800-A212-9A5C0BE9E6EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC642A5-C019-4CC6-B8FB-03CA050F7189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC642A5-C019-4CC6-B8FB-03CA050F7189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC642A5-C019-4CC6-B8FB-03CA050F7189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC642A5-C019-4CC6-B8FB-03CA050F7189}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
