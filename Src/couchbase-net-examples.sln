@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.ViewExamples", "Couchbase.ViewExamples\Couchbase.ViewExamples.csproj", "{DDCF0CB7-8290-427D-A18B-1FFCEAB3B5D9}"
 EndProject
@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{214B32
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.Linq2CouchbaseExample", "Couchbase.Linq2CouchbaseExample\Couchbase.Linq2CouchbaseExample.csproj", "{5EC642A5-C019-4CC6-B8FB-03CA050F7189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.Examples.OwinKatanaIntegration", "Couchbase.Examples.OwinKatanaIntegration\Couchbase.Examples.OwinKatanaIntegration.csproj", "{AF591D65-EC28-4B6F-9CA7-D5DB0F1DBFD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.Examples.GlobalAsaxIntegration", "Couchbase.Examples.GlobalAsaxIntegration\Couchbase.Examples.GlobalAsaxIntegration.csproj", "{0C46AD66-BBF4-4CC7-9D65-2204A9CFF12E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +86,14 @@ Global
 		{5EC642A5-C019-4CC6-B8FB-03CA050F7189}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EC642A5-C019-4CC6-B8FB-03CA050F7189}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EC642A5-C019-4CC6-B8FB-03CA050F7189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF591D65-EC28-4B6F-9CA7-D5DB0F1DBFD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF591D65-EC28-4B6F-9CA7-D5DB0F1DBFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF591D65-EC28-4B6F-9CA7-D5DB0F1DBFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF591D65-EC28-4B6F-9CA7-D5DB0F1DBFD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C46AD66-BBF4-4CC7-9D65-2204A9CFF12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C46AD66-BBF4-4CC7-9D65-2204A9CFF12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C46AD66-BBF4-4CC7-9D65-2204A9CFF12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C46AD66-BBF4-4CC7-9D65-2204A9CFF12E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
