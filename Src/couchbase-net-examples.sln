@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
+<<<<<<< HEAD
 VisualStudioVersion = 12.0.40629.0
+=======
+VisualStudioVersion = 12.0.21005.1
+>>>>>>> 8a5087a1a3df4d4edb68db2e0658c37315bf7d2b
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.ViewExamples", "Couchbase.ViewExamples\Couchbase.ViewExamples.csproj", "{DDCF0CB7-8290-427D-A18B-1FFCEAB3B5D9}"
 EndProject
@@ -32,9 +36,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{214B32
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.Linq2CouchbaseExample", "Couchbase.Linq2CouchbaseExample\Couchbase.Linq2CouchbaseExample.csproj", "{5EC642A5-C019-4CC6-B8FB-03CA050F7189}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.Examples.OwinKatanaIntegration", "Couchbase.Examples.OwinKatanaIntegration\Couchbase.Examples.OwinKatanaIntegration.csproj", "{AF591D65-EC28-4B6F-9CA7-D5DB0F1DBFD9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.Examples.GlobalAsaxIntegration", "Couchbase.Examples.GlobalAsaxIntegration\Couchbase.Examples.GlobalAsaxIntegration.csproj", "{0C46AD66-BBF4-4CC7-9D65-2204A9CFF12E}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CouchbaseAsyncExample", "CouchbaseAsyncExample\CouchbaseAsyncExample.csproj", "{8E43F537-A9C7-43F2-8D1A-99398A6DC843}"
+>>>>>>> 8a5087a1a3df4d4edb68db2e0658c37315bf7d2b
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,6 +94,7 @@ Global
 		{5EC642A5-C019-4CC6-B8FB-03CA050F7189}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EC642A5-C019-4CC6-B8FB-03CA050F7189}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EC642A5-C019-4CC6-B8FB-03CA050F7189}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{AF591D65-EC28-4B6F-9CA7-D5DB0F1DBFD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF591D65-EC28-4B6F-9CA7-D5DB0F1DBFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF591D65-EC28-4B6F-9CA7-D5DB0F1DBFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -94,6 +103,12 @@ Global
 		{0C46AD66-BBF4-4CC7-9D65-2204A9CFF12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C46AD66-BBF4-4CC7-9D65-2204A9CFF12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C46AD66-BBF4-4CC7-9D65-2204A9CFF12E}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{8E43F537-A9C7-43F2-8D1A-99398A6DC843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E43F537-A9C7-43F2-8D1A-99398A6DC843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E43F537-A9C7-43F2-8D1A-99398A6DC843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E43F537-A9C7-43F2-8D1A-99398A6DC843}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 8a5087a1a3df4d4edb68db2e0658c37315bf7d2b
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
