@@ -38,7 +38,7 @@ namespace Couchbase.Examples.OptimisticConcurrencyWithCas
             ClusterHelper.Close();
         }
 
-        static async Task<bool> UpdatePostWithCasAsync(Post modified)
+        static async Task<bool> UpdatePostWithCasAsync(Post post)
         {
             var bucket = ClusterHelper.GetBucket("default");
             const int maxAttempts = 10;
@@ -47,7 +47,7 @@ namespace Couchbase.Examples.OptimisticConcurrencyWithCas
             do
             {
                 //get the original document - if it doesn't exist fail
-                var result = await bucket.GetAsync<Post>(modified.PostId);
+                var result = await bucket.GetAsync<Post>(post.PostId);
                 if (result.Status == ResponseStatus.KeyNotFound)
                 {
                     return false;
@@ -55,12 +55,12 @@ namespace Couchbase.Examples.OptimisticConcurrencyWithCas
 
                 //update the original documents fields
                 var original = result.Value;
-                original.Content = modified.Content;
-                original.Author = modified.Author;
+                original.Content = post.Content;
+                original.Author = post.Author;
                 original.Views = original.Views++;
 
                 //perform the mutation passing in the CAS value
-                result = await bucket.UpsertAsync(modified.PostId, modified, result.Cas);
+                result = await bucket.UpsertAsync(original.PostId, original, result.Cas);
                 if (result.Success)
                 {
                     return true;
