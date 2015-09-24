@@ -18,7 +18,7 @@ namespace Couchbase.Examples.PersistTo
             {
                 Servers = new List<Uri>
                 {
-                    new Uri("http://192.168.77.101:8091/")
+                     new Uri("http://localhost:8091/")
                 }
             });
             _bucket = ClusterHelper.GetBucket("default");
@@ -48,11 +48,6 @@ namespace Couchbase.Examples.PersistTo
                 return true;
             }
             return false;
-        }
-
-        static async void InsertWithPersistTo2(string key, dynamic val)
-        {
-            var result = await _bucket.InsertAsync(key, val, ReplicateTo.Zero, Couchbase.PersistTo.Two);
         }
     }
 }

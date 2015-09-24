@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Couchbase.Configuration.Client;
+using Couchbase.Core;
 using Couchbase.IO;
 
 namespace Couchbase.Examples.PessimisticConcurrencyWithLock
