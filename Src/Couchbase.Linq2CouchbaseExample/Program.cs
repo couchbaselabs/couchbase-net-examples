@@ -18,7 +18,7 @@ namespace Couchbase.Linq2CouchbaseExample
             };
 
             ClusterHelper.Initialize(config);
-            var db = new DbContext(ClusterHelper.Get(), "beer-sample");
+            var db = new BucketContext(ClusterHelper.GetBucket("beer-sample"));
             var query = from b in db.Query<Beer>()
                         select b;
 

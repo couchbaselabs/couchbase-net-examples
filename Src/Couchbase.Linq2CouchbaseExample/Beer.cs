@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Couchbase.Linq2CouchbaseExample
 {
-    [EntityTypeFilter("beer")]
+    [DocumentTypeFilter("beer")]
     public class Beer
     {
         [JsonProperty("name")]
