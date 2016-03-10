@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.ViewExamples", "Couchbase.ViewExamples\Couchbase.ViewExamples.csproj", "{DDCF0CB7-8290-427D-A18B-1FFCEAB3B5D9}"
 EndProject
@@ -57,6 +57,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.BulkOperationsWithWhenAll", "Couchbase.BulkOperationsWithWhenAll\Couchbase.BulkOperationsWithWhenAll.csproj", "{3486A797-FA20-40F9-9454-4BA74A5919B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.Examples.Mangement.ClusterProvisioner", "Couchbase.Examples.Mangement.ClusterProvisioner\Couchbase.Examples.Mangement.ClusterProvisioner.csproj", "{5DAD59DF-6669-49F0-B3C5-80FA0438AC39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Couchbase.Examples.SubDocumentAPI", "Couchbase.Examples.SubDocumentAPI\Couchbase.Examples.SubDocumentAPI.csproj", "{7C148537-1ABE-4279-9D87-2262DE9829BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -160,6 +162,10 @@ Global
 		{5DAD59DF-6669-49F0-B3C5-80FA0438AC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DAD59DF-6669-49F0-B3C5-80FA0438AC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DAD59DF-6669-49F0-B3C5-80FA0438AC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C148537-1ABE-4279-9D87-2262DE9829BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C148537-1ABE-4279-9D87-2262DE9829BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C148537-1ABE-4279-9D87-2262DE9829BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C148537-1ABE-4279-9D87-2262DE9829BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

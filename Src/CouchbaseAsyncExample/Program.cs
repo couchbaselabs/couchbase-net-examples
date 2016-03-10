@@ -38,7 +38,7 @@ namespace CouchbaseAsyncExample
                 Servers = new List<Uri>
                 {
                     //change this to your cluster to bootstrap
-                    new Uri("http://localhost/:8091/pools")
+                    new Uri("http://localhost:8091/pools")
                 }
             };
 
@@ -59,8 +59,8 @@ namespace CouchbaseAsyncExample
 
         public static async Task UpsertAllAsync(List<Person> persons, IBucket bucket)
         {
-            var tasks = new List<Task<OperationResult<Person>>>();
-            persons.ForEach(x => bucket.UpsertAsync(x.Id, x));
+            var tasks = new List<Task<IOperationResult<Person>>>();
+            persons.ForEach(x => tasks.Add(bucket.UpsertAsync(x.Id, x)));
 
             var results = await Task.WhenAll(tasks).ConfigureAwait(false);
             Console.WriteLine("Total upserted: {0}", results.Length);
