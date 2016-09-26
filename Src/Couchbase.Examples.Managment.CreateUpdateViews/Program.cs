@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Couchbase.Configuration.Client;
 
 namespace Couchbase.Examples.Managment.CreateUpdateViews
 {
@@ -16,7 +10,7 @@ namespace Couchbase.Examples.Managment.CreateUpdateViews
             {
                 using (var bucket = cluster.OpenBucket())
                 {
-                    var manager = bucket.CreateManager("Administrator", "");
+                    var manager = bucket.CreateManager("Administrator", "password");
                     var designDoc = "{\"views\":{\"all_docs\":{\"map\":\"function (doc, meta) { emit(meta.id, doc); }\"}}}";
                     var insertResult = manager.InsertDesignDocumentAsync("dd_docs", designDoc).Result;
 

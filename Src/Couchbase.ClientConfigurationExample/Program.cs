@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Couchbase.Configuration.Client;
 using Couchbase.Core;
 
@@ -17,34 +14,32 @@ namespace Couchbase.ClientConfigurationExample
             {
                 Servers = new List<Uri>
                 {
-                    new Uri("http://192.168.56.101:8091/pools"),
-                    new Uri("http://192.168.56.102:8091/pools"),
-                    new Uri("http://192.168.56.103:8091/pools"),
-                    new Uri("http://192.168.56.104:8091/pools"),
+                    new Uri("http://localhost:8091/"),
                 },
                 UseSsl = false,
+                
                 BucketConfigs = new Dictionary<string, BucketConfiguration>
                 {
                     {"default", new BucketConfiguration
                     {
-                        BucketName = "default",
-                        UseSsl = true,
+                        UseSsl = false,
                         Password = "",
                         PoolConfiguration = new PoolConfiguration
                         {
                             MaxSize = 10,
                             MinSize = 5
-                        }
+                        },
+                        
                     }}
                 }
             };
 
             using (var cluster = new Cluster(config))
-            {
+            {            
                 IBucket bucket = null;
                 try
                 {
-                    bucket = cluster.OpenBucket();
+                    bucket = cluster.OpenBucket("default");
                     //use the bucket here
                 }
                 finally
@@ -58,4 +53,3 @@ namespace Couchbase.ClientConfigurationExample
         }
     }
 }
-    

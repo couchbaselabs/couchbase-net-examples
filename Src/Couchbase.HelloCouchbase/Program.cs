@@ -24,7 +24,7 @@ namespace Couchbase.HelloCouchbase
                 {
                     var get = bucket.GetDocument<dynamic>(document.Id);
                     document = get.Document;
-                    var msg = string.Format("{0} {1}!", document.Id, document.Content.Name);
+                    var msg = string.Format("{0} {1}!", document.Id, document.Content.name);
                     Console.WriteLine(msg);
                 }
                 Console.Read();

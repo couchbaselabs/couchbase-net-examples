@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Couchbase.Annotations;
 using Couchbase.Core;
-using Couchbase.Core.Buckets;
 
 namespace Couchbase.DocumentExamples
 {
@@ -19,12 +13,12 @@ namespace Couchbase.DocumentExamples
     }
 
     class Program
-    {
-        static Cluster _cluster = new Cluster();
+    {        
+        static Cluster _cluster = new Cluster("couchbaseClients/couchbase");
        
         static void Main(string[] args)
         {
-            using (var bucket = _cluster.OpenBucket())
+            using (var bucket = _cluster.OpenBucket("default"))
             {
                 var document = InsertDocument(bucket);
                 GetDocument(bucket, document.Id);

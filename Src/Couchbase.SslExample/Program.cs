@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Couchbase.Configuration.Client;
 using Couchbase.Core;
 
 namespace Couchbase.SslExample
@@ -14,18 +8,10 @@ namespace Couchbase.SslExample
         private static Cluster _cluster;
         static void Main(string[] args)
         {
-            var config = new ClientConfiguration
-            {
-                Servers = new List<Uri>
-                {
-                    new Uri("http://192.168.56.101:8091/pools")
-                }
-            };
-
             const int numOperations = 100;
             var opCount = 0;
 
-            using (_cluster = new Cluster(config))
+            using (_cluster = new Cluster())
             {
                 using (var bucket = _cluster.OpenBucket())
                 {

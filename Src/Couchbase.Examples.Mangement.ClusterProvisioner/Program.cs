@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Couchbase.Configuration.Client;
 using Couchbase.Configuration.Server.Serialization;
@@ -42,7 +40,7 @@ namespace Couchbase.Examples.Mangement.ClusterProvisioner
             {
                 Servers = new List<Uri>
                 {
-                    new Uri("http://192.168.77.101:8091/")
+                    new Uri("http://localhost:8091/")
                 }
             };
 

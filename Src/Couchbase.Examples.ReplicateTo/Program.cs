@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Couchbase.Configuration.Client;
 using Couchbase.Core;
-using Couchbase;
 
 namespace Couchbase.Examples.ReplicateTo
 {
@@ -32,8 +29,7 @@ namespace Couchbase.Examples.ReplicateTo
                     Author = "Bingo Bailey",
                     Content = "Some nice content",
                     Published = DateTime.Now
-                });
-
+                }, Couchbase.ReplicateTo.Two);
                 Console.WriteLine(result);
             });
 
@@ -41,13 +37,14 @@ namespace Couchbase.Examples.ReplicateTo
             ClusterHelper.Close();
         }
 
-        private static async Task<bool> InsertWithReplicateTo(Post value)
+        private static async Task<bool> InsertWithReplicateTo(Post value, Couchbase.ReplicateTo replicateOptions)
         {
-            var result = await _bucket.UpsertAsync(value.PostId, value, Couchbase.ReplicateTo.Two);
+            var result = await _bucket.UpsertAsync(value.PostId, value, replicateOptions);
             if (result.Success)
             {
                 return true;
             }
+            Console.WriteLine(result.Status);
             return false;
         }
     }

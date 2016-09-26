@@ -32,7 +32,7 @@ namespace CouchbaseAsyncExample
 
         private static void Main(string[] args)
         {
-            var count = 100000;
+            var count = 10000;
             var config = new ClientConfiguration
             {
                 Servers = new List<Uri>
@@ -48,7 +48,7 @@ namespace CouchbaseAsyncExample
             var items = new List<Person>();
             for (int i = 0; i < count; i++)
             {
-                items.Add(new Person {Age = 21, Name = "Some name" + i, Id = i.ToString()});
+                items.Add(new Person { Age = 21, Name = "Some name" + i, Id = i.ToString() });
             }
 
             Task.Run(async () => await UpsertAllAsync(items, bucket)).ConfigureAwait(false);
