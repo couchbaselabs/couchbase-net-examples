@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Couchbase.Core;
+using Newtonsoft.Json;
 
 namespace Couchbase.ViewExamples
 {
@@ -29,7 +26,7 @@ namespace Couchbase.ViewExamples
             var result = bucket.Query<dynamic>(query);
             foreach (var row in result.Rows)
             {
-                Console.WriteLine(row);
+                Console.WriteLine(JsonConvert.SerializeObject(row));
             }
         }
     }

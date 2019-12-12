@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Couchbase.Configuration.Client;
-using Couchbase.Core;
-using Couchbase.IO;
 
 namespace Couchbase.Examples.PessimisticConcurrencyWithLock
 {
@@ -34,7 +30,11 @@ namespace Couchbase.Examples.PessimisticConcurrencyWithLock
             //insert the first revision
             bucket.Upsert(revision0.PostId, revision0);
 
-            Task.Run(() => UpdatePostWithLockAsync(revision0));
+            Task.Run(() =>
+            {
+                var result = UpdatePostWithLockAsync(revision0);
+                Console.WriteLine("{0} Status Update with lock ", result.Result);
+            });
 
             Console.Read();
             ClusterHelper.Close();

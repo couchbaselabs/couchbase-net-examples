@@ -19,7 +19,7 @@ namespace Couchbase.BulkOperationsWithWhenAll
             {
                 Servers = new List<Uri>
                 {
-                    new Uri("http://192.168.77.101:8091/")
+                    new Uri("http://localhost:8091/")
                 }
             });
             _bucket = ClusterHelper.GetBucket("default");

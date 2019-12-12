@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using Couchbase.Configuration.Client;
 
 namespace Couchbase.Examples.TouchAndGet
@@ -16,15 +13,15 @@ namespace Couchbase.Examples.TouchAndGet
             {
                 Servers = new List<Uri>
                 {
-                    new Uri("http://192.168.77.101/:8091/")
+                    new Uri("http://localhost:8091/")
                 }
             });
-            GetAndTouchAsync();
+            GetWithExpirationAndTouchAsync();
             Console.Read();
             ClusterHelper.Close();
         }
 
-        private static async void GetAndTouchAsync()
+        private static async void GetWithExpirationAndTouchAsync()
         {
             var bucket = ClusterHelper.GetBucket("default");
             var result = bucket.Upsert("foo", "bar", new TimeSpan(0, 0, 0, 3));

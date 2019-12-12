@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Couchbase.Configuration.Client;
 
 namespace Couchbase.ExamplesTimeToLive
@@ -15,7 +12,7 @@ namespace Couchbase.ExamplesTimeToLive
             {
                 Servers = new List<Uri>
                 {
-                    new Uri("http://192.168.77.101/:8091/")
+                    new Uri("http://localhost:8091/")
                 }
             });
 
@@ -35,6 +32,7 @@ namespace Couchbase.ExamplesTimeToLive
             if (result.Success)
             {
                 //upsert was successful
+                Console.WriteLine(result.Status);
             }
         }
 
@@ -52,6 +50,7 @@ namespace Couchbase.ExamplesTimeToLive
             if (result.Success)
             {
                 //upsert was successful
+                Console.WriteLine(result.Status);
             }
         }
     }

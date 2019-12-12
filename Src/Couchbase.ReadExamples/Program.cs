@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Couchbase.ReadExamples
 {
@@ -10,6 +7,19 @@ namespace Couchbase.ReadExamples
     {
         static void Main(string[] args)
         {
+            using (Cluster cluster = new Cluster())
+            {
+                using (var bucket = cluster.OpenBucket("beer-sample"))
+                {
+                    var result = bucket.Get<dynamic>("21st_amendment_brewery_cafe");
+                    if (result.Success)
+                    {
+                        Console.WriteLine(JsonConvert.SerializeObject(result.Value));
+                    }
+                }
+            }
+
+            Console.Read();
         }
     }
 }

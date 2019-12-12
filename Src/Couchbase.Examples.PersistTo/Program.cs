@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Couchbase.Configuration.Client;
-using Couchbase;
 using Couchbase.Core;
+using Couchbase.IO.Operations;
 
 namespace Couchbase.Examples.PersistTo
 {
@@ -25,13 +23,13 @@ namespace Couchbase.Examples.PersistTo
 
             Task.Run(async () =>
             {
-                var result = await InsertWithPersistTo(new Post
+                var result = await InsertWithPersistenceOptions(new Post
                 {
-                    PostId = "p-0002",
-                    Author = "Bingo Bailey",
-                    Content = "Some nice content",
+                    PostId = GenerateUniqueValue(),
+                    Author = GenerateUniqueValue("Author"),
+                    Content = GenerateUniqueValue("Content "),
                     Published = DateTime.Now
-                });
+                }, Couchbase.PersistTo.One);
 
                 Console.WriteLine(result);
             });
@@ -40,14 +38,15 @@ namespace Couchbase.Examples.PersistTo
             ClusterHelper.Close();
         }
 
-        static async Task<bool> InsertWithPersistTo(Post value)
+        private static string GenerateUniqueValue(string prefix = null)
         {
-            var result = await _bucket.InsertAsync(value.PostId,  value, ReplicateTo.Zero, Couchbase.PersistTo.Two);
-            if (result.Success)
-            {
-                return true;
-            }
-            return false;
+            return prefix != null ? prefix + Guid.NewGuid() : Guid.NewGuid().ToString();
+        }
+
+        static async Task<bool> InsertWithPersistenceOptions(Post value, Couchbase.PersistTo persistenceOptions)
+        {
+            var result = await _bucket.InsertAsync(value.PostId, value, ReplicateTo.Zero, persistenceOptions);
+            return result.Success;
         }
     }
 }

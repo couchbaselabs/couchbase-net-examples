@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Couchbase.N1QLExamples
 {
@@ -13,9 +8,9 @@ namespace Couchbase.N1QLExamples
 
         static void Main(string[] args)
         {
-            using (var bucket = _cluster.OpenBucket())
+            using (var bucket = _cluster.OpenBucket("beer-sample"))
             {
-                const string query = "SELECT c FROM tutorial as c";
+                const string query = "SELECT name FROM `beer-sample` LIMIT 100";
                 var result = bucket.Query<dynamic>(query);
                 foreach (var row in result.Rows)
                 {
